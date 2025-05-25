@@ -1,16 +1,15 @@
-# money-code
-money code
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>條碼存錢筒</title>
+  <title>存錢筒</title>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
     body { font-family: sans-serif; text-align: center; padding: 30px; background: #000000; }
     input { padding: 15px; font-size: 20px; margin: 20px; }
     button { padding: 20px 40px; font-size: 20px; }
-    #amount { font-size: 40px; margin: 30px; color: green; }
+    #amount { font-size: 40px; margin: 30px; color:#007799; }
     svg { margin-top: 30px; }
   </style>
 </head>
