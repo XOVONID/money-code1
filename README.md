@@ -7,52 +7,55 @@ money code
   <title>條碼存錢筒</title>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 20px;
-      background: #f0f0f0;
-    }
-    input, button {
-      font-size: 18px;
-      padding: 10px;
-      margin: 10px;
-    }
-    svg {
-      margin-top: 30px;
-    }
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
+    input { padding: 10px; font-size: 18px; margin: 10px; }
+    button { padding: 10px 20px; font-size: 18px; }
+    #amount { font-size: 32px; margin: 20px; color: green; }
+    svg { margin-top: 20px; }
   </style>
 </head>
 <body>
   <h1>條碼存錢筒</h1>
-  <p>請輸入 <strong>12 位數字</strong>，按下按鈕產生條碼。</p>
+  <div id="amount">目前餘額：$<span id="balance">0</span></div>
 
-  <input id="code" value="000000000000" maxlength="12"/>
+  <input id="inputMoney" type="number" placeholder="輸入金額" />
   <br />
-  <button onclick="generate()">更新條碼</button>
-
+  <button onclick="addMoney()">存錢</button>
+  <button onclick="subtractMoney()">花錢</button>
   <br />
   <svg id="barcode"></svg>
 
   <script>
-    function generate() {
-      const code = document.getElementById("code").value;
-      if (code.length === 12 && /^\d+$/.test(code)) {
-        JsBarcode("#barcode", code, {
-          format: "EAN13",
-          displayValue: true,
-          lineColor: "#000",
-          width: 2,
-          height: 100,
-        });
-      } else {
-        alert("請輸入正確的 12 位數字（例如：000000001000）");
+    let balance = 0;
+
+    function updateBalance() {
+      document.getElementById("balance").textContent = balance;
+      JsBarcode("#barcode", String(balance).padStart(13, '0'), {
+        format: "EAN13",
+        lineColor: "#000",
+        width: 2,
+        height: 100,
+        displayValue: true
+      });
+    }
+
+    function addMoney() {
+      const val = parseInt(document.getElementById("inputMoney").value);
+      if (!isNaN(val)) {
+        balance += val;
+        updateBalance();
       }
     }
 
-    generate(); // 預設先產生一次
+    function subtractMoney() {
+      const val = parseInt(document.getElementById("inputMoney").value);
+      if (!isNaN(val)) {
+        balance -= val;
+        updateBalance();
+      }
+    }
+
+    updateBalance();
   </script>
 </body>
 </html>
-
-  
