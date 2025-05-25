@@ -7,17 +7,17 @@
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
     body { font-family: sans-serif; text-align: center; padding: 30px; background: #000000; }
-    input { padding: 15px; font-size: 20px; margin: 20px; }
-    button { padding: 20px 40px; font-size: 20px; }
-    #amount { font-size: 40px; margin: 30px; color:#007799; }
-    svg { margin-top: 30px; }
+    input { padding: 10px; font-size: 30px; margin: 30px; }
+    button { padding: 30px 50px; font-size: 30px; }
+    #amount { font-size: 50px; margin: 40px; color:#007799; }
+    svg { margin-top: 40px; }
   </style>
 </head>
 <body>
-  <h1>條碼存錢筒</h1>
-  <div id="amount">目前餘額：$<span id="balance">0</span></div>
+  <h1>存錢筒</h1>
+  <div id="amount">餘額：$<span id="balance">0</span></div>
 
-  <input id="inputMoney" type="number" placeholder="輸入金額" />
+  <input id="inputMoney" type="number" placeholder="輸入" />
   <br />
   <button onclick="addMoney()">存錢</button>
   <button onclick="subtractMoney()">花錢</button>
@@ -32,8 +32,8 @@
       JsBarcode("#barcode", String(balance).padStart(13, '0'), {
         format: "code11",
         lineColor: "#000",
-        width: 2,
-        height: 1000,
+        width: 1,
+        height: 100,
         displayValue: true
       });
     }
