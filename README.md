@@ -25,7 +25,7 @@
   <svg id="barcode"></svg>
 
   <script>
-    let balance = 0;
+    let balance =000;
 
     function updateBalance() {
       document.getElementById("balance").textContent = balance;
