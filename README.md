@@ -7,11 +7,11 @@ money code
   <title>條碼存錢筒</title>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
-    input { padding: 10px; font-size: 18px; margin: 10px; }
-    button { padding: 10px 20px; font-size: 18px; }
-    #amount { font-size: 32px; margin: 20px; color: green; }
-    svg { margin-top: 20px; }
+    body { font-family: sans-serif; text-align: center; padding: 30px; background: #000000; }
+    input { padding: 15px; font-size: 20px; margin: 20px; }
+    button { padding: 20px 40px; font-size: 20px; }
+    #amount { font-size: 40px; margin: 30px; color: green; }
+    svg { margin-top: 30px; }
   </style>
 </head>
 <body>
@@ -31,10 +31,10 @@ money code
     function updateBalance() {
       document.getElementById("balance").textContent = balance;
       JsBarcode("#barcode", String(balance).padStart(13, '0'), {
-        format: "EAN13",
+        format: "code11",
         lineColor: "#000",
         width: 2,
-        height: 100,
+        height: 1000,
         displayValue: true
       });
     }
