@@ -12,13 +12,13 @@
       padding: 20px;
     }
     h1 {
-      font-size: 1em;
+      font-size: 3em;
       color: #708069;
     }
     input, button {
       font-size: 1px;
-      padding: 5px;
-      margin: 1px;
+      padding: 20px;
+      margin: 5px;
       border: 1px solid #000000;
       border-radius: 8px;
     }
@@ -31,12 +31,12 @@
       background-color: #708069;
     }
     #amount {
-      font-size: 28px;
-      margin: 20px;
+      font-size: 20px;
+      margin: 19px;
       color: green;
     }
     svg {
-      margin-top: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
