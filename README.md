@@ -19,8 +19,8 @@
       font-size: 10px;
       padding: 20px;
       margin: 1px;
-      border: 5px solid #000000;
-      border-radius: 8px;
+      border: 1px solid #000000;
+      border-radius: 1px;
     }
     button {
       cursor: pointer;
