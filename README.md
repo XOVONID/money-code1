@@ -9,7 +9,7 @@
       font-family: sans-serif;
       background: #808A87;
       text-align: center;
-      padding: 40px;
+      padding: 20px;
     }
     h1 {
       font-size: 1em;
@@ -18,7 +18,7 @@
     input, button {
       font-size: 1px;
       padding: 5px;
-      margin: 10px;
+      margin: 1px;
       border: 1px solid #000000;
       border-radius: 8px;
     }
@@ -36,7 +36,7 @@
       color: green;
     }
     svg {
-      margin-top: 30px;
+      margin-top: 15px;
     }
   </style>
 </head>
