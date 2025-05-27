@@ -16,10 +16,10 @@
       color: #708069;
     }
     input, button {
-      font-size: 1px;
+      font-size: 10px;
       padding: 20px;
       margin: 10px;
-      border: 1px solid #000000;
+      border: 5px solid #000000;
       border-radius: 8px;
     }
     button {
