@@ -20,7 +20,7 @@
       padding: 20px;
       margin: 1px;
       border: 1px solid #000000;
-      border-radius: 1px;
+      border-radius: 9px;
     }
     button {
       cursor: pointer;
