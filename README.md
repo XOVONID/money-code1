@@ -12,23 +12,23 @@
       padding: 40px;
     }
     h1 {
-      font-size: 2em;
-      color: #333;
+      font-size: 4em;
+      color: #708069;
     }
     input, button {
-      font-size: 18px;
+      font-size: 20px;
       padding: 10px;
       margin: 10px;
-      border: 1px solid #708069;
+      border: 5px solid #000000;
       border-radius: 8px;
     }
     button {
       cursor: pointer;
-      background-color: #007bff;
-      color: white;
-    }
+      background-color: #808A87;
+    
+    
     button:hover {
-      background-color: #0056b3;
+      background-color: #708069;
     }
     #amount {
       font-size: 28px;
