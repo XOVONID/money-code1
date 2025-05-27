@@ -25,12 +25,12 @@
   <svg id="barcode"></svg>
 
   <script>
-    let balance =000;
+    let balance =1;
 
     function updateBalance() {
       document.getElementById("balance").textContent = balance;
       JsBarcode("#barcode", String(balance).padStart(13, '0'), {
-        format: "code11",
+        format: "EAN-13",
         lineColor: "#000",
         width: 1,
         height: 100,
