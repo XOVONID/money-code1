@@ -19,7 +19,7 @@
       font-size: 18px;
       padding: 10px;
       margin: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #708069;
       border-radius: 8px;
     }
     button {
