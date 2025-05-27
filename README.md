@@ -7,19 +7,19 @@
   <style>
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
+      background: #808A87;
       text-align: center;
       padding: 40px;
     }
     h1 {
-      font-size: 4em;
+      font-size: 1em;
       color: #708069;
     }
     input, button {
-      font-size: 20px;
-      padding: 15px;
+      font-size: 1px;
+      padding: 5px;
       margin: 10px;
-      border: 8px solid #000000;
+      border: 1px solid #000000;
       border-radius: 8px;
     }
     button {
