@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-7">
   <title>存錢筒</title>
-  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <script src="https://https://xovonid.github.io/money-code1/></script>
   <style>
     body { font-family: sans-serif; text-align: center; padding: 30px; background: #000000; }
     input { padding: 10px; font-size: 30px; margin: 30px; }
