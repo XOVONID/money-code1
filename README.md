@@ -12,7 +12,7 @@
       padding: 20px;
     }
     h1 {
-      font-size: 5em;
+      font-size: 2em;
       color: #000000;
     }
     input, button {
