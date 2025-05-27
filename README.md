@@ -1,60 +1,90 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-7">
-  <title>存錢筒</title>
-  <script src="https://https://xovonid.github.io/money-code1/></script>
+  <meta charset="UTF-8">
+  <title>條碼存錢筒</title>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 30px; background: #000000; }
-    input { padding: 10px; font-size: 30px; margin: 30px; }
-    button { padding: 30px 50px; font-size: 30px; }
-    #amount { font-size: 50px; margin: 40px; color:#007799; }
-    svg { margin-top: 40px; }
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #333;
+    }
+    input, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #amount {
+      font-size: 28px;
+      margin: 20px;
+      color: green;
+    }
+    svg {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
-  <h1>存錢筒</h1>
-  <div id="amount">餘額：$<span id="balance">0</span></div>
+  <h1>條碼存錢筒</h1>
 
-  <input id="inputMoney" type="number" placeholder="輸入" />
+  <div id="amount">目前餘額：$<span id="balance">0</span></div>
+
+  <input id="inputMoney" type="number" placeholder="輸入金額" />
   <br />
   <button onclick="addMoney()">存錢</button>
   <button onclick="subtractMoney()">花錢</button>
   <br />
+
   <svg id="barcode"></svg>
 
   <script>
-    let balance =1;
+    let balance = 0;
 
-    function updateBalance() {
-      document.getElementById("balance").textContent = balance;
-      JsBarcode("#barcode", String(balance).padStart(13, '0'), {
-        format: "EAN-13",
+    function updateBarcode() {
+      const numberStr = String(balance).padStart(12, '0');
+      JsBarcode("#barcode", numberStr, {
+        format: "EAN13",
+        displayValue: true,
         lineColor: "#000",
-        width: 1,
-        height: 100,
-        displayValue: true
+        width: 2,
+        height: 100
       });
+      document.getElementById("balance").textContent = balance;
     }
 
     function addMoney() {
       const val = parseInt(document.getElementById("inputMoney").value);
       if (!isNaN(val)) {
         balance += val;
-        updateBalance();
+        updateBarcode();
       }
     }
 
     function subtractMoney() {
       const val = parseInt(document.getElementById("inputMoney").value);
       if (!isNaN(val)) {
-        balance -= val;
-        updateBalance();
+        balance = Math.max(0, balance - val);
+        updateBarcode();
       }
     }
 
-    updateBalance();
+    updateBarcode(); // 初始化
   </script>
 </body>
 </html>
