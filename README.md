@@ -18,7 +18,7 @@
     input, button {
       font-size: 10px;
       padding: 20px;
-      margin: 10px;
+      margin: 1px;
       border: 5px solid #000000;
       border-radius: 8px;
     }
@@ -32,11 +32,11 @@
     }
     #amount {
       font-size: 20px;
-      margin: 19px;
-      color: green;
+      margin: 10px;
+      color: #D2B48C;
     }
     svg {
-      margin-top: 20px;
+      margin-top: 1px;
     }
   </style>
 </head>
