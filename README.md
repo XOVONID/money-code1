@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>條碼存錢筒（含登入）</title>
+  <title>條碼存錢筒（完整功能）</title>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
     body {
@@ -16,10 +16,10 @@
       color: #000000;
     }
     input, button {
-      font-size: 18px;
+      font-size: 20px;
       padding: 10px;
-      margin: 2px;
-      border: 1px solid #000000;
+      margin: 1px;
+      border: 1px solid #ccc;
       border-radius: 10px;
     }
     button {
@@ -28,7 +28,7 @@
       color: white;
     }
     button:hover {
-      background-color: #D2B48C;
+      background-color: #808A87;
     }
     #amount {
       font-size: 28px;
@@ -36,7 +36,7 @@
       color: green;
     }
     svg {
-      margin-top: 20px;
+      margin-top: 30px;
     }
     #app, #barcode {
       display: none;
@@ -70,6 +70,7 @@
 
   <script>
     let currentUser = null;
+    let balance = 0;
 
     function login() {
       const username = document.getElementById("username").value.trim();
@@ -81,7 +82,8 @@
         return;
       }
 
-      const storedPassword = localStorage.getItem("user_" + username + "_password");
+      const pwKey = "user_" + username + "_password";
+      const storedPassword = localStorage.getItem(pwKey);
 
       if (storedPassword && storedPassword !== password) {
         alert("密碼錯誤！");
@@ -89,7 +91,7 @@
       }
 
       if (!storedPassword) {
-        localStorage.setItem("user_" + username + "_password", password); // 新帳號註冊
+        localStorage.setItem(pwKey, password); // 自動註冊帳號
       }
 
       if (remember) {
@@ -106,13 +108,15 @@
     }
 
     function loadBalance() {
-      const saved = localStorage.getItem("user_" + currentUser + "_balance");
+      const key = "user_" + currentUser + "_balance";
+      const saved = localStorage.getItem(key);
       balance = saved ? parseInt(saved) : 0;
       updateDisplay();
     }
 
     function saveBalance() {
-      localStorage.setItem("user_" + currentUser + "_balance", balance);
+      const key = "user_" + currentUser + "_balance";
+      localStorage.setItem(key, balance);
     }
 
     function updateDisplay() {
@@ -147,23 +151,20 @@
 
     function logout() {
       currentUser = null;
+      balance = 0;
       document.getElementById("app").style.display = "none";
       document.getElementById("barcode").style.display = "none";
       document.getElementById("login").style.display = "block";
     }
 
-    // 自動登入已記住的帳號
+    // 自動填入記住的帳號
     const remembered = localStorage.getItem("saved_username");
     if (remembered) {
       document.getElementById("username").value = remembered;
       document.getElementById("remember").checked = true;
     }
-
-    let balance = 0;
   </script>
 </body>
 </html>
- 
-
   
      
