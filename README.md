@@ -6,7 +6,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: STsong;
       background: #808A87;
       text-align: center;
       padding: 20px;
@@ -20,7 +20,7 @@
       padding: 20px;
       margin: 1px;
       border: 1px solid #000000;
-      border-radius: 9px;
+      border-radius: 10px;
     }
     button {
       cursor: pointer;
