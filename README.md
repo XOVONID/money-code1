@@ -44,10 +44,10 @@
   </style>
 </head>
 <body>
-  <h1>條碼存錢筒</h1>
+  <h1></h1>
 
   <div id="login">
-    <p><strong>請輸入帳號與密碼</strong></p>
+    <p><strong>請輸入帳號與密碼</strong>EAN-13條碼存錢系統</p>
     <input id="username" placeholder="帳號" />
     <input id="password" type="password" placeholder="密碼" />
     <br />
