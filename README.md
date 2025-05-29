@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>條碼存錢筒（完整功能）</title>
-  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <meta charset="UTF-8" />
+  <title>EAN-13條碼存錢系統</title>
+  <script src="https://XOVONID Github io/money code-1></script>
   <style>
     body {
-      font-family: sans-serif;
-      background: #A39480;
+      font-family: 日系中文;
+      background: #808069;
       text-align: center;
       padding: 30px;
     }
@@ -16,27 +16,27 @@
       color: #000000;
     }
     input, button {
-      font-size: 20px;
+      font-size: 18px;
       padding: 10px;
-      margin: 1px;
-      border: 1px solid #ccc;
+      margin: 2px;
+      border: 1px solid #000000;
       border-radius: 10px;
     }
     button {
       cursor: pointer;
-      background-color: #FFF5EE;
+      background-color: #FAF0E6;
       color: white;
     }
     button:hover {
-      background-color: #808A87;
+      background-color: #0056b3;
     }
     #amount {
       font-size: 28px;
       margin: 20px;
-      color: green;
+      color: 708069;
     }
     svg {
-      margin-top: 30px;
+      margin-top: 20px;
     }
     #app, #barcode {
       display: none;
@@ -121,7 +121,7 @@
 
     function updateDisplay() {
       document.getElementById("balance").textContent = balance;
-      const numberStr = String(balance).padStart(12, '0');
+      const numberStr = String(balance).padStart(12, '0'); // EAN13 需要 12 碼，會自動補最後一碼檢查碼
       JsBarcode("#barcode", numberStr, {
         format: "EAN13",
         displayValue: true,
@@ -166,5 +166,5 @@
   </script>
 </body>
 </html>
-  
-     
+    
+      
