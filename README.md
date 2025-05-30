@@ -70,7 +70,7 @@
 
   <script>
     let currentUser = null;
-    let balance = 0;
+    let balance =000;
 
     // 自動填入帳密
     window.onload = () => {
