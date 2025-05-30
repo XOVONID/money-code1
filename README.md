@@ -59,7 +59,7 @@
     <div id="amount">目前餘額：$<span id="balance">0</span></div>
     <input id="inputMoney" type="number" placeholder="輸入金額" />
     <br />
-    <button onclick="addMoney()">吃
+    <button onclick="addMoney()">
 存入金額</button>
     <button onclick="subtractMoney()">支出金錢</button>
     <br />
@@ -74,7 +74,7 @@
 
     function login() {
       const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value;
+      const password = document.getElementById("password").value;trim();
       const remember = document.getElementById("remember").checked;
 
       if (!username || !password) {
