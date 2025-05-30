@@ -155,23 +155,58 @@
       currentUser = null;
       balance = 0;
       document.getElementById("app").style.display = "none";
-      document.getElementById("barcode").style.display = "none";
-      document.getElementById("login").style.display = "block";
-    }
+      
+     // 自動填入帳密
+window.onload = () => {
+  const savedUser = localStorage.getItem("saved_username");
+  const savedPass = localStorage.getItem("saved_password");
 
-    // 自動填入記住的帳號與密碼
-    const remembered = localStorage.getItem("saved_username");
-    if (remembered) {
-      document.getElementById("username").value = remembered;
-      document.getElementById("remember").checked = true;
-    }
-    const remembered;
-localStorage.getItem("saved_password");
-    if (remembered) {
-      document.getElementById("password").value = remembered;
-      document.getElementById("remember").checked = true;
+  if (savedUser) {
+    document.getElementById("username").value = savedUser;
+    document.getElementById("remember").checked = true;
+  }
+  if (savedPass) {
+    document.getElementById("password").value = savedPass;
+  }
+}
 
-    }
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+  const remember = document.getElementById("remember").checked;
+
+  if (!username || !password) {
+    alert("請輸入帳號與密碼");
+    return;
+  }
+
+  const pwKey = "user_" + username + "_password";
+  const storedPassword = localStorage.getItem(pwKey);
+
+  if (storedPassword && storedPassword !== password) {
+    alert("密碼錯誤！");
+    return;
+  }
+
+  if (!storedPassword) {
+    localStorage.setItem(pwKey, password); // 自動註冊
+  }
+
+  if (remember) {
+    localStorage.setItem("saved_username", username);
+    localStorage.setItem("saved_password", password);
+  } else {
+    localStorage.removeItem("saved_username");
+    localStorage.removeItem("saved_password");
+  }
+
+  currentUser = username;
+  document.getElementById("login").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  document.getElementById("barcode").style.display = "block";
+  loadBalance();
+}
+    
   </script>
 </body>
 </html>
