@@ -1,7 +1,5 @@
 
-<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
   <title>EAN-13金額記錄系統</title>
   
   <style>
