@@ -53,7 +53,7 @@
     <br>
     <label><input type="checkbox" id="remember"> 記住帳號密碼（可以方便登出登入本系統）</label>
     <br>
-    <button onclick="login()">登入login</button>
+    <button onclick="login()">登入</button>
   </div>
 
   <div id="app">
@@ -65,7 +65,7 @@
     <br><br>
     <svg id="barcode"></svg>
     <br><br>
-    <button onclick="logout()">登出logout</button>
+    <button onclick="logout()">登出</button>
   </div>
 
   <script>
