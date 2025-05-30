@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>EAN-13條碼存錢系統</title>
-  <script src="https://XOVONID Github io/money code-1></script>
   <style>
     body {
       font-family: 日系中文;
@@ -25,15 +24,15 @@
     button {
       cursor: pointer;
       background-color: #FAF0E6;
-      color: white;
+      color: #000000;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color: #708069;
     }
     #amount {
       font-size: 28px;
-      margin: 20px;
-      color: 708069;
+      margin: 10px;
+      color: #F5F5F5;
     }
     svg {
       margin-top: 20px;
@@ -47,11 +46,11 @@
   <h1></h1>
 
   <div id="login">
-    <p><strong>請輸入帳號與密碼</strong></p>
-    <input id="username" placeholder="帳號" />
-    <input id="password" type="password" placeholder="密碼" />
+    <p><strong>請輸入個人系統資料（初次使用會自動註冊，本系統全免費使用）</strong></p>
+    <input id="username" placeholder="請輸入帳號" />
+    <input id="password" type="password" placeholder="請輸入密碼" />
     <br />
-    <label><input type="checkbox" id="remember" /> 記住帳號</label>
+    <label><input type="checkbox" id="remember" /> 記住用戶資訊</label>
     <br />
     <button onclick="login()">登入</button>
   </div>
@@ -60,8 +59,9 @@
     <div id="amount">目前餘額：$<span id="balance">0</span></div>
     <input id="inputMoney" type="number" placeholder="輸入金額" />
     <br />
-    <button onclick="addMoney()">存錢</button>
-    <button onclick="subtractMoney()">花錢</button>
+    <button onclick="addMoney()">吃
+存入金額</button>
+    <button onclick="subtractMoney()">支出金錢</button>
     <br />
     <svg id="barcode"></svg>
     <br />
@@ -91,16 +91,18 @@
       }
 
       if (!storedPassword) {
-        localStorage.setItem(pwKey, password); // 自動註冊帳號
+        localStorage.setItem(pwKey, password); // 自動註冊帳密
       }
 
       if (remember) {
         localStorage.setItem("saved_username", username);
-      } else {
-        localStorage.removeItem("saved_username");
-      }
+      } else {localStorage.setItem("saved_username", username);
+      } localStorage.setItem("saved_password", password);
+      } else {localStorage.setItem("saved_password", password);
+      } 
+       
 
-      currentUser = username;
+      currentUser = username and password;
       document.getElementById("login").style.display = "none";
       document.getElementById("app").style.display = "block";
       document.getElementById("barcode").style.display = "block";
@@ -157,11 +159,18 @@
       document.getElementById("login").style.display = "block";
     }
 
-    // 自動填入記住的帳號
+    // 自動填入記住的帳號與密碼
     const remembered = localStorage.getItem("saved_username");
     if (remembered) {
       document.getElementById("username").value = remembered;
       document.getElementById("remember").checked = true;
+    }
+    const remembered;
+localStorage.getItem("saved_password");
+    if (remembered) {
+      document.getElementById("password").value = remembered;
+      document.getElementById("remember").checked = true;
+
     }
   </script>
 </body>
