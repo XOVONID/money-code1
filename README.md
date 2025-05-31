@@ -68,7 +68,7 @@
 
   <script>
     let currentUser = null;
-    let balance =000;
+    let balance =15;
 
     // 自動填入帳密
     window.onload = () => {
